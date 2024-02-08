@@ -1,16 +1,3 @@
-function resultadoPopup() {
-
-    const overlay = document.getElementById("overlay");
-    overlay.style.display = "block";
-
-    const resultado = document.getElementById("resultado");
-    resultado.style.display = "flex";
-    resultado.style.position = "absolute";
-
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
 const quadro = document.getElementById("quadro");
 const pontuacaoElement = document.getElementById("pontuacao");
 const tempoElement = document.getElementById("tempo");
@@ -40,7 +27,6 @@ function criarBolinha() {
         bolinha.style.backgroundColor = "green";
         pontuacaoElement.textContent = "Pontuação: " + pontos;
 
-        // Mantenha a bolinha verde por 1 segundo antes de remover
         setTimeout(() => {
             bolinha.style.backgroundColor = "red";
             bolinha.remove();
@@ -67,7 +53,8 @@ function iniciarTemporizador() {
 
         if (tempoRestante <= 0) {
             tempoRestante = 0;
-            tempoElement.textContent = "Segundos restantes: 60";
+            const pontFinal = document.getElementById("pontFinal");
+            pontFinal.textContent = "Pontuação final: " + pontos;
             resultadoPopup();
         }
 
@@ -78,7 +65,6 @@ function iniciarTemporizador() {
     }, 1000);
 
 }
-
 
 const game = document.getElementById("game");
 const startButton = document.getElementById("btnIniciar");
@@ -91,4 +77,40 @@ function inicalizarJogo() {
     game.style.position = "relative";
     criarBolinha();
     iniciarTemporizador();
+}
+
+function reiniciarJogo() {
+    inicalizarJogo();
+    const overlay = document.getElementById("overlay");
+    overlay.style.display = "none";
+
+    const resultado = document.getElementById("resultado");
+    resultado.style.display = "none";
+
+}
+
+function resultadoPopup() {
+
+    const overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
+
+    const resultado = document.getElementById("resultado");
+    resultado.style.display = "flex";
+    resultado.style.position = "absolute";
+
+}
+
+function salvarJogo(){
+
+    fetch('/salvar', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            usuario: "teste",
+            recorde: pontos
+        })
+    })
+
 }

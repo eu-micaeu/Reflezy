@@ -5,9 +5,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/eu-micaeu/Vocatito/database"
-	"github.com/eu-micaeu/Vocatito/middlewares"
-	"github.com/eu-micaeu/Vocatito/routes"
+	"github.com/eu-micaeu/Reflezy/database"
+	"github.com/eu-micaeu/Reflezy/middlewares"
+	"github.com/eu-micaeu/Reflezy/routes"
 )
 
 func main() {

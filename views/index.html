@@ -22,13 +22,19 @@
 
         <p style="font-size: 25px;">Acabou o tempo!</p>
 
+        <p style="font-size: 25px;" id="pontFinal">Sua pontuação foi de: </p>
+
         <p style="font-size: 25px;">Salve com 3 LETRAS</p>
 
         <input type="text" id="nome" maxlength="3" style="font-size: 25px; font-family: 'SpeedRush'; text-align: center; width: 50px; background-color: transparent;">
 
+        <button type="button" id="btnSalvar" onclick="salvarJogo()" style="color: black;">SALVAR</button>
+        
+        <button type="button" id="btnReiniciar" onclick="reiniciarJogo()" style="color: black;">REINICIAR</button>
+
     </div>
 
-    <h1 style="font-size: 70px; cursor: pointer; margin: 10px; padding: 0;" onclick="location.reload();">R</h1>
+    <h1 style="font-size: 70px; cursor: pointer;" onclick="location.reload();" id="logo">R</h1>
 
     <button type="button" id="btnIniciar" onclick="inicalizarJogo()">INICIAR</button>
 
@@ -38,9 +44,9 @@
 
         <div id="quadro"></div>
 
-        <p id="tempo" style="font-size: 25px;">Segundos restantes: 60</p>
+        <p id="tempo" style="font-size: 20px;">Segundos restantes: 60</p>
 
-        <p id="pontuacao" style="font-size: 25px;">Pontuação: 0</p>
+        <p id="pontuacao" style="font-size: 20px;">Pontuação: 0</p>
 
     </div>
 

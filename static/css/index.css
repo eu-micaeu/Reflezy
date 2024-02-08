@@ -5,6 +5,23 @@
   
 }
 
+#logo{
+
+    padding: 0;
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    font-size: 75px;
+    color: black;
+    background: linear-gradient(45deg, violet, blue, green, yellow, orange, red);
+    background-size: 500% 500%;
+    animation: rainbow 3s linear infinite;
+
+}
+
 #overlay{
 
     display: none;
@@ -15,7 +32,7 @@
 
     height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0);
 
     justify-content: center;
 
@@ -32,7 +49,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 100px;
+    padding: 200px;
     color: black;
     background-color: rgb(177, 177, 177);
     z-index: 1000;
@@ -41,7 +58,9 @@
     height: 200px;
     top: 50%;
     left: 50%;
+    border-radius: 5px 10px 5px 10px;
     transform: translate(-50%, -50%);
+
 }
 
 body{
@@ -77,7 +96,7 @@ button {
     padding-bottom: 15px;
 
     border-radius: 5px 10px 5px 10px;
-    transition: color 1s ease; /* Alteração aqui para aplicar transição apenas à cor do texto */
+    transition: color 1s ease; 
 }
 
 button:hover {
@@ -99,8 +118,6 @@ button:hover {
     }
 }
 
-
-
 #game{
 
     display: none;
@@ -115,8 +132,8 @@ button:hover {
     position: relative;
     display: flex;
     border: 5px solid rgb(177, 177, 177, 0.1);
-    width: 1000px;
-    height: 500px;
+    width: 80vw;
+    height: 50vh;
     padding: 30px;
 }
 
