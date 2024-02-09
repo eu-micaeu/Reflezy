@@ -12,6 +12,8 @@ func UsuarioRoutes(r *gin.Engine, db *sql.DB) {
 
 	userHandler := handlers.Usuario{}
 
-	r.PUT("/salvar", userHandler.Save(db))
+	r.POST("/salvar", userHandler.Salvar(db))
+
+	r.GET("/recordes", userHandler.Recordes(db))
 
 }

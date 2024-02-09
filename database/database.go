@@ -16,13 +16,13 @@ func NewDB() (*sql.DB, error) {
 
 	dbUser := "root"
 
-	dbPassword := "c9N1ydwtNIlvwjl8LxHQPCgQ3xmXrcvg"
+	dbPassword := "lofHKStrzDr8bQhKg8UaC4kbbxBI88Nt"
 
-	dbHost := "dpg-cmgs7b6n7f5s739moo2g-a.oregon-postgres.render.com"
+	dbHost := "dpg-cn2k1mgl6cac739edgp0-a.oregon-postgres.render.com"
 
 	dbPort := "5432"
 
-	dbName := "vocatito"
+	dbName := "reflezy"
 
 	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=require", dbUser, dbPassword, dbHost, dbPort, dbName)
 

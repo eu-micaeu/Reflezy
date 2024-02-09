@@ -26,7 +26,7 @@
 
         <p style="font-size: 25px;">Salve com 3 LETRAS</p>
 
-        <input type="text" id="nome" maxlength="3" style="font-size: 25px; font-family: 'SpeedRush'; text-align: center; width: 50px; background-color: transparent;">
+        <input type="text" id="nome" maxlength="3" style="font-size: 25px; font-family: 'SpeedRush'; text-align: center; width: 50px; background-color: transparent; padding: 10px; width: 100px;">
 
         <button type="button" id="btnSalvar" onclick="salvarJogo()" style="color: black;">SALVAR</button>
         
@@ -38,7 +38,7 @@
 
     <button type="button" id="btnIniciar" onclick="inicalizarJogo()">INICIAR</button>
 
-    <button type="button" id="btnRecordes">RECORDES</button>
+    <button type="button" id="btnRecordes" onclick="mostrarRecordes()">RECORDES</button>
 
     <div id="game">
 
@@ -48,6 +48,10 @@
 
         <p id="pontuacao" style="font-size: 20px;">Pontuação: 0</p>
 
+    </div>
+
+    <div id="recordes">
+        <div id="tabela"></div>
     </div>
 
     <script src="../static/js/index.js"></script>
