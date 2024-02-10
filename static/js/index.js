@@ -24,7 +24,7 @@ function criarBolinha() {
 
     bolinha.style.backgroundColor = "red";
 
-    const tamanhoBolinha = (50 - 10) + 10;
+    const tamanhoBolinha = 30;
 
     bolinha.style.width = bolinha.style.height = tamanhoBolinha + "px";
 

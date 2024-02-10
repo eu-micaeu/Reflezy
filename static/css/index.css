@@ -1,19 +1,22 @@
 @font-face {
+
     font-family: 'SpeedRush';
+
     src: url('../font/SpeedRush-JRKVB.ttf');
+
     font-weight: normal;
 
 }
 
 #logo {
 
-    padding: 0;
+    padding-bottom: 20px;
 
-    margin: 30px;
+    margin: 20px;
 
-    width: 100px;
+    width: 80px;
 
-    height: 100px;
+    height: 80px;
 
     border-radius: 5px;
 
@@ -152,24 +155,37 @@ button {
 }
 
 button:hover {
+
     background: linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
+
     background-size: 600% 600%;
+
     animation: rainbow 4s linear infinite;
+
     color: black;
+
 }
 
 @keyframes rainbow {
+
     0% {
+
         background-position: 0% 50%;
+
     }
 
     50% {
+
         background-position: 100% 50%;
+
     }
 
     100% {
+
         background-position: 0% 50%;
+
     }
+
 }
 
 #game {
@@ -192,46 +208,67 @@ button:hover {
 
     border-radius: 10px;
 
-    width: 80vw;
+    width: 400px;
 
-    height: 65vh;
+    height: 300px;
 
-    padding: 10 0px;
+    padding: 20px;
 
     border-radius: 3px;
 
 }
 
 #recordes {
+
     flex-direction: column;
+
     width: 400px;
+
     display: none;
+
     color: black;
+
     background-color: rgb(177, 177, 177);
+
     z-index: 1001;
+
     padding: 30px;
+
     margin: 40px;
+
     border-radius: 10px;
-    /* Adiciona bordas arredondadas */
+
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    /* Adiciona sombra para dar profundidade */
+
 }
 
 #tabela {
+
     font-size: 30px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
     width: 100%;
-    /* Garante que a tabela ocupe toda a largura disponível */
+
 }
 
 
 .bolinha {
+
     position: absolute;
+
     border-radius: 50%;
+
     position: absolute;
+
     cursor: pointer;
-    margin: 15px;
+
+    margin: 0px;
+
 }
