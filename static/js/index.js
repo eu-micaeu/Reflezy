@@ -108,12 +108,14 @@ const recordsButton = document.getElementById("btnRecordes");
 
 function inicalizarJogo() {
 
+    fecharRecordes();
+
     startButton.style.display = "none";
 
     recordsButton.style.display = "none";
 
     game.style.display = "block";
-    
+
     game.style.position = "relative";
 
     criarBolinha();
@@ -132,19 +134,26 @@ function resultadoPopup() {
 
     resultado.style.display = "flex";
 
-    resultado.style.position = "absolute";
-
 }
 
 function reiniciarJogo() {
-
-    window.location.reload();
-
+    window.location.href = window.location.pathname + "?restart=true";
 }
 
-function salvarJogo(){
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("restart") === "true") {
+        const btnIniciar = document.getElementById("btnIniciar");
+        if (btnIniciar) {
+            btnIniciar.click();
+        }
+    }
+});
 
-    if(document.getElementById("nome").value == ""){
+
+function salvarJogo() {
+
+    if (document.getElementById("nome").value == "") {
 
         alert("Digite um nome para salvar o recorde");
 
@@ -170,40 +179,75 @@ function salvarJogo(){
 
     })
 
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error('Erro ao salvar o recorde');
+
+            }
+
+            const salvo = document.getElementById("salvo");
+
+            salvo.style.display = "flex";
+
+            setTimeout(() => {
+
+                salvo.style.display = "none";
+
+                window.location.href = "/";
+
+            }, 2000);
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
+        });
+
 }
 
 async function mostrarRecordes() {
     try {
-
-        const response = await fetch('/recordes', {
-            method: 'GET'
-        });
+        const response = await fetch('/recordes');
 
         if (!response.ok) {
             throw new Error('Erro ao obter os recordes');
         }
 
         const data = await response.json();
-        const recordes = document.getElementById('recordes');
         const tabela = document.getElementById('tabela');
 
-        recordes.style.display = 'flex';
+        // Limpa a tabela antes de adicionar novos dados
+        tabela.innerHTML = '';
 
-        tabela.innerHTML = ''; 
-
-        data.forEach(item => {
+        // Utiliza o método map para criar um array de linhas da tabela
+        const linhas = data.map(item => {
             const linha = document.createElement('tr');
-            const coluna1 = document.createElement('td');
-            const coluna2 = document.createElement('td');
+            const coluna = document.createElement('td');
 
-            coluna1.textContent = item.usuario;
-            coluna2.textContent = item.recorde;
+            coluna.textContent = item.usuario + '   ➠ ' + item.recorde;
 
-            linha.appendChild(coluna1);
-            linha.appendChild(coluna2);
-            tabela.appendChild(linha);
+            linha.appendChild(coluna);
+
+            return linha;
         });
+
+        // Adiciona todas as linhas à tabela de uma vez
+        linhas.forEach(linha => tabela.appendChild(linha));
+
+        // Exibe a tabela apenas depois de todos os dados terem sido adicionados
+        document.getElementById('recordes').style.display = 'flex';
     } catch (error) {
         console.error(error);
     }
 }
+
+function fecharRecordes() {
+    document.getElementById('recordes').style.display = 'none';
+}
+
+
+

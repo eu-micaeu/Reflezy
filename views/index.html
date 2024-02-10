@@ -32,9 +32,15 @@
         
         <button type="button" id="btnReiniciar" onclick="reiniciarJogo()" style="color: black;">REINICIAR</button>
 
+        <div id="salvo">
+
+            <p>Salvo com sucesso!</p>
+    
+        </div>
+
     </div>
 
-    <h1 style="font-size: 70px; cursor: pointer;" onclick="location.reload();" id="logo">R</h1>
+    <h1 style="font-size: 70px; cursor: pointer;" onclick="window.location.href='/'" id="logo">R</h1>
 
     <button type="button" id="btnIniciar" onclick="inicalizarJogo()">INICIAR</button>
 
@@ -52,6 +58,7 @@
 
     <div id="recordes">
         <div id="tabela"></div>
+        <button type="button" id="btnVoltar" onclick="fecharRecordes()" style="color: black;">FECHAR</button>
     </div>
 
     <script src="../static/js/index.js"></script>
