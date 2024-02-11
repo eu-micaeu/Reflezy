@@ -57,7 +57,7 @@ func (u *Usuario) Recordes(db *sql.DB) gin.HandlerFunc {
 
 	return func(c *gin.Context) {
 
-		rows, err := db.Query("SELECT * FROM usuarios ORDER BY recorde DESC LIMIT 5")
+		rows, err := db.Query("SELECT * FROM usuarios ORDER BY recorde DESC")
 
 		if err != nil {
 
