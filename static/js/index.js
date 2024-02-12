@@ -24,7 +24,7 @@ function criarBolinha() {
 
     bolinha.style.backgroundColor = "red";
 
-    const tamanhoBolinha = 30;
+    const tamanhoBolinha = 50;
 
     bolinha.style.width = bolinha.style.height = tamanhoBolinha + "px";
 
@@ -66,7 +66,7 @@ function criarBolinha() {
 
         criarBolinha();
 
-    }, 700);
+    }, 750);
 
 }
 
@@ -106,9 +106,13 @@ const startButton = document.getElementById("btnIniciar");
 
 const recordsButton = document.getElementById("btnRecordes");
 
+const introducao = document.getElementById("introducao");
+
 function inicalizarJogo() {
 
     fecharRecordes();
+
+    introducao.style.display = "none";
 
     startButton.style.display = "none";
 
